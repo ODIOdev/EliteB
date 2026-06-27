@@ -7,7 +7,7 @@ import {
   LayoutDashboard, Users, Building2, Calendar, UserCircle, Megaphone, Settings,
   Menu, Bell, Search, LogOut, ChevronLeft,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { DASHBOARD_NAV, BRAND } from "@/lib/constants";
 import { Input } from "@/components/ui/input";
@@ -100,7 +100,15 @@ export function DashboardHeader() {
 }
 
 export function DashboardShell({ children }: { children: React.ReactNode }) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 1023px)");
+    const sync = () => setCollapsed(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
