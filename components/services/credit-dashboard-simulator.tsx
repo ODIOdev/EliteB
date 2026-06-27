@@ -297,7 +297,7 @@ export function CreditDashboardSimulator() {
                         <TabsTrigger
                           key={bureau.id}
                           value={bureau.id}
-                          className="flex flex-col gap-0.5 px-1 py-2 text-center data-[state=active]:bg-white data-[state=active]:shadow-sm sm:px-2"
+                          className="flex flex-col gap-0.5 px-1 py-2 text-center data-[state=active]:bg-card data-[state=active]:shadow-sm sm:px-2"
                         >
                           <span className="text-[10px] font-semibold sm:text-xs">{bureau.name}</span>
                           <span className="text-base font-bold text-navy sm:text-lg">{bureau.score}</span>

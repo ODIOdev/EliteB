@@ -64,10 +64,10 @@ function ImageGallery({ images }: { images: Listing["images"] }) {
         <Image src={imgs[active].url} alt={imgs[active].alt || "Property"} fill className="object-cover" priority />
         {imgs.length > 1 && (
           <>
-            <button onClick={() => setActive((a) => (a - 1 + imgs.length) % imgs.length)} className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-md hover:bg-white">
+            <button onClick={() => setActive((a) => (a - 1 + imgs.length) % imgs.length)} className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-card/95 p-2 shadow-md hover:bg-muted">
               <ChevronLeft className="h-5 w-5" />
             </button>
-            <button onClick={() => setActive((a) => (a + 1) % imgs.length)} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-md hover:bg-white">
+            <button onClick={() => setActive((a) => (a + 1) % imgs.length)} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-card/95 p-2 shadow-md hover:bg-muted">
               <ChevronRight className="h-5 w-5" />
             </button>
           </>
@@ -113,7 +113,7 @@ export function ListingDetailContent({ listing }: { listing: Listing }) {
           <div className="lg:col-span-2 space-y-8">
             <ImageGallery images={listing.images} />
 
-            <div className="flex flex-wrap items-center gap-6 rounded-2xl border border-border/60 bg-white p-6">
+            <div className="flex flex-wrap items-center gap-6 rounded-2xl border border-border bg-card p-6 shadow-card">
               <p className="text-3xl font-semibold">{formatPrice(listing.price ?? 0, listing.listing_type)}</p>
               <Separator orientation="vertical" className="hidden h-10 sm:block" />
               <span className="flex items-center gap-1 text-muted-foreground"><Bed className="h-5 w-5" />{listing.beds} Beds</span>

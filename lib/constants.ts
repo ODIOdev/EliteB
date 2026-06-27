@@ -12,6 +12,7 @@ export const BRAND = {
     title: "Licensed Real Estate Broker",
     instagramHandle: "@jfebry.therealtor",
     followers: "1,100+",
+    avatar: "/images/j-febry-headshot.png",
   },
   social: {
     instagram: "https://www.instagram.com/jfebry.therealtor/",

@@ -35,7 +35,7 @@ export function SearchWidget({ variant = "hero" }: { variant?: "hero" | "compact
 
   const isHero = variant === "hero";
   const heroFieldClass =
-    "h-11 border-white/35 bg-white/50 backdrop-blur-sm placeholder:text-muted-foreground";
+    "h-11 border-border bg-card/80 shadow-sm backdrop-blur-sm placeholder:text-muted-foreground";
 
   if (isHero) {
     return (
@@ -48,22 +48,22 @@ export function SearchWidget({ variant = "hero" }: { variant?: "hero" | "compact
             </h2>
           </div>
           <Tabs value={type} onValueChange={setType}>
-            <TabsList className="h-auto rounded-lg border border-white/35 bg-white/30 p-1 backdrop-blur-sm">
+            <TabsList className="h-auto rounded-lg border border-border bg-muted/70 p-1 shadow-sm backdrop-blur-sm">
               <TabsTrigger
                 value="buy"
-                className="rounded-md px-4 py-2 text-sm data-[state=active]:bg-white/75 data-[state=active]:shadow-sm"
+                className="rounded-md px-4 py-2 text-sm data-[state=active]:bg-card data-[state=active]:shadow-sm"
               >
                 Buy
               </TabsTrigger>
               <TabsTrigger
                 value="rent"
-                className="rounded-md px-4 py-2 text-sm data-[state=active]:bg-white/75 data-[state=active]:shadow-sm"
+                className="rounded-md px-4 py-2 text-sm data-[state=active]:bg-card data-[state=active]:shadow-sm"
               >
                 Rent
               </TabsTrigger>
               <TabsTrigger
                 value="sell"
-                className="rounded-md px-4 py-2 text-sm data-[state=active]:bg-white/75 data-[state=active]:shadow-sm"
+                className="rounded-md px-4 py-2 text-sm data-[state=active]:bg-card data-[state=active]:shadow-sm"
               >
                 Sell
               </TabsTrigger>

@@ -19,7 +19,7 @@ export function PropertyCard({ listing, showSave = true }: PropertyCardProps) {
   const imageUrl = primaryImage?.url || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80";
 
   return (
-    <Card className="group overflow-hidden rounded-2xl border-border/60 transition-colors hover:border-border">
+    <Card className="group overflow-hidden rounded-2xl border-border transition-all hover:border-border hover:shadow-card-md">
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={imageUrl}
@@ -33,7 +33,7 @@ export function PropertyCard({ listing, showSave = true }: PropertyCardProps) {
           <Badge variant="listing">{listing.listing_type === "rent" ? "For Rent" : "For Sale"}</Badge>
         </div>
         {showSave && (
-          <button className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border border-border/60 bg-white/95 text-foreground transition-colors hover:bg-muted">
+          <button className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card/95 text-foreground shadow-sm transition-colors hover:bg-muted">
             <Heart className="h-4 w-4" />
           </button>
         )}

@@ -10,7 +10,7 @@ interface PageHeroProps {
 
 export function PageHero({ title, description, align = "left", className, children }: PageHeroProps) {
   return (
-    <section className={cn("border-b border-border/60 bg-white", className)}>
+    <section className={cn("border-b border-border bg-card shadow-sm", className)}>
       <div
         className={cn(
           "container mx-auto px-4 py-12 md:py-16 lg:px-8",

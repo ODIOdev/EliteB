@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard, Users, Building2, Calendar, UserCircle, Megaphone, Settings,
@@ -68,7 +69,7 @@ export function DashboardSidebar({ collapsed, onToggle }: { collapsed: boolean; 
 
 export function DashboardHeader() {
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b bg-white px-6">
+    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-border bg-card px-6 shadow-sm">
       <div className="relative max-w-md flex-1">
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         <Input placeholder="Search leads, listings, appointments..." className="pl-10" />
@@ -83,7 +84,15 @@ export function DashboardHeader() {
             <p className="text-sm font-medium">{BRAND.broker.name}</p>
             <p className="text-xs text-muted-foreground">Broker</p>
           </div>
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-navy text-sm font-semibold text-gold">JF</div>
+          <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full bg-black ring-2 ring-gold/40">
+            <Image
+              src={BRAND.broker.avatar}
+              alt={BRAND.broker.name}
+              fill
+              className="object-contain object-bottom"
+              sizes="36px"
+            />
+          </div>
         </div>
       </div>
     </header>
@@ -94,9 +103,9 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div className="min-h-screen bg-secondary/30">
+    <div className="min-h-screen bg-background">
       <DashboardSidebar collapsed={collapsed} onToggle={() => setCollapsed(!collapsed)} />
-      <div className={cn("transition-all duration-300", collapsed ? "ml-[72px]" : "ml-64")}>
+      <div className={cn("min-w-0 transition-all duration-300", collapsed ? "ml-[72px]" : "ml-64")}>
         <DashboardHeader />
         <main className="p-6">{children}</main>
       </div>

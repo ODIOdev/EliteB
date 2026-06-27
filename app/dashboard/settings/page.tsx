@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Save, Key, CreditCard, Globe } from "lucide-react";
 import { InstagramIcon, FacebookIcon, LinkedinIcon } from "@/components/site/social-icons";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -33,7 +34,25 @@ export default function SettingsPage() {
               <CardTitle>Brand Information</CardTitle>
               <CardDescription>Update your company details displayed across the website</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-6">
+              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full bg-black ring-2 ring-gold/40">
+                  <Image
+                    src={BRAND.broker.avatar}
+                    alt={BRAND.broker.name}
+                    fill
+                    className="object-contain object-bottom"
+                    sizes="80px"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold text-navy">{BRAND.broker.name}</p>
+                  <p className="text-sm text-muted-foreground">{BRAND.broker.title}</p>
+                  <Button variant="outline" size="sm" className="mt-2" type="button">
+                    Change photo
+                  </Button>
+                </div>
+              </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div><Label>Company Name</Label><Input defaultValue={BRAND.name} /></div>
                 <div><Label>Tagline</Label><Input defaultValue={BRAND.tagline} /></div>

@@ -1,14 +1,13 @@
-import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { InstagramIcon, FacebookIcon, LinkedinIcon } from "@/components/site/social-icons";
 import { Logo } from "@/components/site/logo";
-import { BRAND, NAV_LINKS } from "@/lib/constants";
+import { BRAND } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/60 bg-muted/50">
+    <footer className="border-t border-border bg-muted shadow-[inset_0_1px_0_0_hsl(var(--border)/0.5)]">
       <div className="container mx-auto px-4 py-14 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <div className="hidden lg:block">
             <Logo variant="footer" className="mb-4 [&_img]:h-10" />
             <p className="text-sm leading-relaxed text-muted-foreground">
@@ -22,24 +21,6 @@ export function Footer() {
             >
               {BRAND.broker.instagramHandle}
             </a>
-          </div>
-
-          <div className="hidden lg:block">
-            <h4 className="mb-4 text-sm font-semibold text-foreground">Quick Links</h4>
-            <ul className="space-y-2">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link href="/listings" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  All Listings
-                </Link>
-              </li>
-            </ul>
           </div>
 
           <div>

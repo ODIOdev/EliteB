@@ -110,7 +110,7 @@ function MiniRing({
 }
 
 const glassStatTabClass =
-  "group flex h-auto w-full flex-col gap-3 rounded-2xl border-2 border-border/80 bg-white/45 p-4 text-left shadow-sm backdrop-blur-xl transition-all hover:border-border hover:bg-white/55 data-[state=active]:border-royal data-[state=active]:bg-white/75 data-[state=active]:shadow-md data-[state=active]:ring-1 data-[state=active]:ring-royal/20";
+  "group flex h-auto w-full flex-col gap-3 rounded-2xl border-2 border-border bg-card/80 p-4 text-left shadow-card backdrop-blur-xl transition-all hover:border-border hover:bg-card hover:shadow-card-md data-[state=active]:border-royal data-[state=active]:bg-card data-[state=active]:shadow-card-md data-[state=active]:ring-1 data-[state=active]:ring-royal/20";
 
 export function TaxDashboardSimulator() {
   const [form, setForm] = useState(initialForm);
@@ -177,7 +177,7 @@ export function TaxDashboardSimulator() {
         <TabsList className="grid h-auto w-full grid-cols-2 gap-3 bg-transparent p-0 xl:grid-cols-4">
           <TabsTrigger value="deadline" className={glassStatTabClass}>
             <div className="flex w-full items-start justify-between gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/60 bg-white/50 backdrop-blur-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card/80 shadow-sm backdrop-blur-sm">
                 <Calendar className="h-5 w-5 text-royal" />
               </div>
               <MiniRing value={daysLeft} max={365} strokeClass="stroke-royal" />
@@ -190,7 +190,7 @@ export function TaxDashboardSimulator() {
 
           <TabsTrigger value="progress" className={glassStatTabClass}>
             <div className="flex w-full items-start justify-between gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/60 bg-white/50 backdrop-blur-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card/80 shadow-sm backdrop-blur-sm">
                 <FileText className="h-5 w-5 text-gold" />
               </div>
               <MiniRing value={progress} strokeClass="stroke-gold" />
@@ -203,7 +203,7 @@ export function TaxDashboardSimulator() {
 
           <TabsTrigger value="refund" className={glassStatTabClass}>
             <div className="flex w-full items-start justify-between gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/60 bg-white/50 backdrop-blur-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card/80 shadow-sm backdrop-blur-sm">
                 <Wallet className="h-5 w-5 text-emerald-700" />
               </div>
               <div className="flex h-11 w-11 items-center justify-center rounded-full border border-emerald-200/80 bg-emerald-50/80 text-xs font-semibold text-emerald-700 backdrop-blur-sm">
@@ -218,7 +218,7 @@ export function TaxDashboardSimulator() {
 
           <TabsTrigger value="documents" className={glassStatTabClass}>
             <div className="flex w-full items-start justify-between gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/60 bg-white/50 backdrop-blur-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card/80 shadow-sm backdrop-blur-sm">
                 <Shield className="h-5 w-5 text-royal" />
               </div>
               <MiniRing value={checklistDone} max={CHECKLIST.length} strokeClass="stroke-royal" />
@@ -233,7 +233,7 @@ export function TaxDashboardSimulator() {
         </TabsList>
 
         <TabsContent value="deadline" className="mt-0">
-          <div className="glass-panel rounded-2xl border-2 border-border/80 bg-white/45 p-5 backdrop-blur-xl sm:p-6">
+          <div className="glass-panel rounded-2xl border-2 border-border p-5 backdrop-blur-xl sm:p-6">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-sm font-medium text-muted-foreground">Tax season countdown</p>
@@ -255,17 +255,17 @@ export function TaxDashboardSimulator() {
         </TabsContent>
 
         <TabsContent value="progress" className="mt-0">
-          <div className="glass-panel rounded-2xl border-2 border-border/80 bg-white/45 p-5 backdrop-blur-xl sm:p-6">
+          <div className="glass-panel rounded-2xl border-2 border-border p-5 backdrop-blur-xl sm:p-6">
             <p className="text-sm font-medium text-muted-foreground">Preparation breakdown</p>
             <p className="mt-1 text-lg font-semibold text-navy">{progress}% complete</p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-white/60 bg-white/50 p-4 backdrop-blur-sm">
+              <div className="rounded-xl border border-border bg-card/80 shadow-sm backdrop-blur-sm p-4 backdrop-blur-sm">
                 <p className="text-xs text-muted-foreground">Form fields filled</p>
                 <p className="mt-1 text-xl font-bold text-navy">
                   {filledFields}/{Object.keys(form).length}
                 </p>
               </div>
-              <div className="rounded-xl border border-white/60 bg-white/50 p-4 backdrop-blur-sm">
+              <div className="rounded-xl border border-border bg-card/80 shadow-sm backdrop-blur-sm p-4 backdrop-blur-sm">
                 <p className="text-xs text-muted-foreground">Checklist items ready</p>
                 <p className="mt-1 text-xl font-bold text-navy">
                   {checklistDone}/{CHECKLIST.length}
@@ -276,7 +276,7 @@ export function TaxDashboardSimulator() {
         </TabsContent>
 
         <TabsContent value="refund" className="mt-0">
-          <div className="glass-panel rounded-2xl border-2 border-border/80 bg-white/45 p-5 backdrop-blur-xl sm:p-6">
+          <div className="glass-panel rounded-2xl border-2 border-border p-5 backdrop-blur-xl sm:p-6">
             <p className="text-sm font-medium text-muted-foreground">Live estimate (demo)</p>
             <p className="mt-1 text-3xl font-bold text-navy">{refundDisplay}</p>
             <p className="mt-1 text-sm text-muted-foreground">{refundLabel}</p>
@@ -287,7 +287,7 @@ export function TaxDashboardSimulator() {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="rounded-xl border border-white/60 bg-white/50 px-3 py-2 text-sm backdrop-blur-sm"
+                  className="rounded-xl border border-border bg-card/80 shadow-sm backdrop-blur-sm px-3 py-2 text-sm backdrop-blur-sm"
                 >
                   <span className="text-muted-foreground">{item.label}: </span>
                   <span className="font-semibold text-navy">{item.value}</span>
@@ -298,7 +298,7 @@ export function TaxDashboardSimulator() {
         </TabsContent>
 
         <TabsContent value="documents" className="mt-0">
-          <div className="glass-panel rounded-2xl border-2 border-border/80 bg-white/45 p-5 backdrop-blur-xl sm:p-6">
+          <div className="glass-panel rounded-2xl border-2 border-border p-5 backdrop-blur-xl sm:p-6">
             <p className="text-sm font-medium text-muted-foreground">Document readiness</p>
             <p className="mt-1 text-lg font-semibold text-navy">
               {checklistDone} of {CHECKLIST.length} items marked ready
@@ -307,7 +307,7 @@ export function TaxDashboardSimulator() {
               {CHECKLIST.map((item) => (
                 <div
                   key={item.id}
-                  className="flex items-center gap-3 rounded-xl border border-white/60 bg-white/50 px-3 py-2.5 backdrop-blur-sm"
+                  className="flex items-center gap-3 rounded-xl border border-border bg-card/80 shadow-sm backdrop-blur-sm px-3 py-2.5 backdrop-blur-sm"
                 >
                   {checked[item.id] ? (
                     <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-600" />
@@ -359,7 +359,7 @@ export function TaxDashboardSimulator() {
                     <TabsTrigger
                       key={step.value}
                       value={step.value}
-                      className="flex h-auto flex-col items-start gap-1 rounded-xl border border-transparent bg-white px-3 py-3 text-left shadow-sm data-[state=active]:border-gold/40 data-[state=active]:bg-white data-[state=active]:shadow-md"
+                      className="flex h-auto flex-col items-start gap-1 rounded-xl border border-transparent bg-card px-3 py-3 text-left shadow-card data-[state=active]:border-gold/40 data-[state=active]:bg-card data-[state=active]:shadow-card-md"
                     >
                       <step.icon className="h-4 w-4 text-royal data-[state=active]:text-gold" />
                       <span className="text-sm font-semibold text-navy">{step.label}</span>

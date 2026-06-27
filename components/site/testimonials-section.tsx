@@ -19,7 +19,7 @@ function getInitials(name: string) {
 
 function TestimonialThumbCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <div className="flex h-full flex-col rounded-2xl border border-border/60 bg-white p-4">
+    <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-4 shadow-card">
       <div className="mb-3 flex items-center gap-3">
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-semibold text-foreground">
           {getInitials(testimonial.name)}
@@ -43,7 +43,7 @@ function TestimonialThumbCard({ testimonial }: { testimonial: Testimonial }) {
 
 function TestimonialFullCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <div className="rounded-2xl border border-border/60 bg-white p-6">
+    <div className="rounded-2xl border border-border bg-card p-6 shadow-card-md">
       <div className="mb-4 flex gap-1">
         {Array.from({ length: testimonial.rating }).map((_, i) => (
           <Star key={i} className="h-4 w-4 fill-gold text-gold" />

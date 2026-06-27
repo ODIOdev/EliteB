@@ -8,7 +8,7 @@ import { BRAND } from "@/lib/constants";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden border-b border-border/60 bg-white">
+    <section className="relative overflow-hidden border-b border-border bg-background">
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
         <Image
           src={MOCK_IMAGES.hero}
@@ -18,7 +18,7 @@ export function HeroSection() {
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-white/76" />
+        <div className="absolute inset-0 bg-background/82" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 py-12 lg:px-8 lg:py-20">

@@ -29,7 +29,7 @@ export function Header() {
     "text-sm font-medium text-muted-foreground transition-colors hover:text-foreground";
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-white/80 backdrop-blur-lg">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-card/90 shadow-sm backdrop-blur-lg">
       <div className="container mx-auto flex h-[4.25rem] items-center justify-between gap-4 px-4 lg:h-20 lg:px-8">
         <Logo variant="header" className="[&_img]:h-12 sm:[&_img]:h-14 lg:[&_img]:h-16" />
 
@@ -76,7 +76,7 @@ export function Header() {
         </button>
       </div>
 
-      <div className={cn("border-t border-border/60 bg-white lg:hidden", mobileOpen ? "block" : "hidden")}>
+      <div className={cn("border-t border-border bg-card shadow-sm lg:hidden", mobileOpen ? "block" : "hidden")}>
         <nav className="container mx-auto flex flex-col gap-1 px-4 py-4">
           {showHome && (
             <Link

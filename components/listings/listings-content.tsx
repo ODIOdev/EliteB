@@ -44,7 +44,7 @@ export function ListingsContent() {
           <p className="mt-2 text-muted-foreground">{filtered.length} properties available</p>
         </div>
 
-        <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-border/60 bg-white p-4 lg:flex-row lg:items-center">
+        <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-border bg-card p-4 shadow-card lg:flex-row lg:items-center">
           <div className="flex flex-1 flex-wrap gap-3">
             <Input placeholder="Search by address or neighborhood..." value={search} onChange={(e) => setSearch(e.target.value)} className="max-w-xs" />
             <Select value={type} onValueChange={setType}>
